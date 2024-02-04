@@ -15,7 +15,7 @@ public class GameService {
         int randomNumber = new Random().nextInt(size);
         return words.get(randomNumber);
     }
-    public List<String> getWords() {
+    public List<String> getFileData() {
         List<String> words = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
