@@ -11,6 +11,6 @@ public class InputView {
         System.out.println("제시된 단어는 " + length + "글자 입니다.%n");
         System.out.println("단어 :" + UNDER_BAR.repeat(length));
         System.out.println("유추한 알파벳 또는 단어를 입력해 주세요.");
-        return SC.nextLine();
+        return SC.nextLine().trim();
     }
 }
