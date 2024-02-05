@@ -1,11 +1,12 @@
 package hangman.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Submission {
-    private List<String> submission;
+    private final List<String> submission = new ArrayList<>();
 
-    private void validateSubmission(String input) {
+    public void validateSubmission(String input) {
         for (String data : submission) {
             if (data.equals(input)) {
                 throw new IllegalArgumentException();

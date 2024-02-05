@@ -1,14 +1,29 @@
 package hangman.service;
 
+import hangman.domain.Answer;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class GameService {
 
+    public List<String> createHint(String word) {
+        return IntStream.range(0, word.length())
+                .mapToObj(i -> " _")
+                .toList();
+    }
+
+    public void updateHint(String input, List<String> hint, Answer answer) {
+        int index = 0;
+        while ((index = answer.getIndex(input, index)) != -1) {
+            hint.set(index, input);
+        }
+    }
     public String getRandomWord(List<String> words) {
         int size = words.size();
         int randomNumber = new Random().nextInt(size);
@@ -26,4 +41,6 @@ public class GameService {
         }
         return words;
     }
+
+
 }

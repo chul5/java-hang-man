@@ -17,4 +17,12 @@ public class Answer {
     public boolean isContained(String input) {
         return answer.contains(input);
     }
+
+    public boolean isEqual(String input) {
+        return answer.equals(input);
+    }
+
+    public int getIndex(String input, int index) {
+        return answer.indexOf(input, index);
+    }
 }
