@@ -8,16 +8,15 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GameService {
-    private final String FILE_PATH = "src/resources/words.md";
 
     public String getRandomWord(List<String> words) {
         int size = words.size();
         int randomNumber = new Random().nextInt(size);
         return words.get(randomNumber);
     }
-    public List<String> getFileData() {
+    public List<String> getFileData(String filePath) {
         List<String> words = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
                 words.add(line);
