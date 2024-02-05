@@ -12,8 +12,8 @@ import java.util.List;
 
 public class GameController {
 
-    private final String WORDS_PATH = "src/resources/words.md";
-    private final String HANG_MAN_PATH = "src/resources/hangman.txt";
+    private final String WORDS_PATH = "src/main/resources/words.md";
+    private final String HANG_MAN_PATH = "src/main/resources/hangman.txt";
     private final InputView inputView;
     private final OutputView outputView;
     private Answer answer;

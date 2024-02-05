@@ -5,7 +5,7 @@ public class Validator {
 
     public static String input(String input) {
         if (input.isEmpty())
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("비었음");
         if (input.length() == ALPHA)
             alpha(input);
         return input;
@@ -13,6 +13,6 @@ public class Validator {
     public static void alpha(String input) {
         if (!input.chars()
                 .allMatch(i -> 'a' <= i && i <= 'z'))
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("소문자가 아님");
     }
 }

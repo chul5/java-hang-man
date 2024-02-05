@@ -12,16 +12,24 @@ import java.util.stream.Stream;
 
 public class GameService {
 
+    // 이거 immutable이라 set메서드를 사용 못하는 거 같아서 수정해봄
+//    public List<String> createHint(String word) {
+//        return IntStream.range(0, word.length())
+//                .mapToObj(i -> " _")
+//                .toList();
+//    }
     public List<String> createHint(String word) {
-        return IntStream.range(0, word.length())
-                .mapToObj(i -> " _")
-                .toList();
+        List<String> hint = new ArrayList<>();
+        for (int i = 0; i < word.length(); i++) {
+            hint.add(" _");
+        }
+        return hint;
     }
 
     public void updateHint(String input, List<String> hint, Answer answer) {
         int index = 0;
         while ((index = answer.getIndex(input, index)) != -1) {
-            hint.set(index, input);
+            hint.set(index++, " " + input);
         }
     }
     public String getRandomWord(List<String> words) {

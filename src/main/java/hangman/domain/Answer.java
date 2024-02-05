@@ -10,8 +10,8 @@ public class Answer {
     }
 
     public void validateInputLength(String input) {
-        if (answer.length() != input.length())
-            throw new IllegalArgumentException();
+        if (answer.length() < input.length())
+            throw new IllegalArgumentException("정답보다 입력값 길이가 김");
     }
 
     public boolean isContained(String input) {

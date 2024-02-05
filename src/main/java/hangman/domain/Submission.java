@@ -9,7 +9,7 @@ public class Submission {
     public void validateSubmission(String input) {
         for (String data : submission) {
             if (data.equals(input)) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("이미 입력했던 단어임");
             }
         }
         submission.add(input);
